@@ -17,3 +17,14 @@ config.action_view.cache_template_loading            = true
 
 # Disable delivery errors, bad email addresses will be ignored
 # config.action_mailer.raise_delivery_errors = false
+
+# ExceptionNotifier
+
+# Recipients separated by space
+ExceptionNotifier.exception_recipients = %w(youremail@example.com)
+
+# Sender address, defaults to exception.notifier@default.com
+#ExceptionNotifier.sender_address = %("Application Error" <app.error@myapp.com>)
+
+# Prefix for title, defaults to "[ERROR] "
+#ExceptionNotifier.email_prefix = "[APP] "

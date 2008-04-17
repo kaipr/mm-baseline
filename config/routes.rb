@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }
+  map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate'
+  map.resource :session
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
