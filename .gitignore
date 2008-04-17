@@ -1,0 +1,7 @@
+config/database.yml
+tmp/attachment_fu/*
+tmp/cache/*
+tmp/pids/*
+tmp/sessions/*
+tmp/sockets/*
+log/*
