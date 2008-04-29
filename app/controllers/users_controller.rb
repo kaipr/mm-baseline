@@ -3,11 +3,28 @@ class UsersController < ApplicationController
   include AuthenticatedSystem
   
   # Protect these actions behind an admin login
-  # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge]
+  permit 'admin', :only => [:suspend, :unsuspend, :destroy, :purge, :index, :edit, :update]
+  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge, :edit, :update]
   
 
-  # render new.rhtml
+  def index
+    @users = User.find :all, :order => 'state'
+  end
+  
+  # render edit.html.erb
+  def edit
+  end
+  
+  def update
+    if @user.update_attributes(params[:user])
+      flash[:notice] = 'Update des Benutzers erfolgreich!'
+    else
+      flash[:notice] = 'Update des Benutzers fehlgeschlagen!'
+    end
+    redirect_to users_path
+  end
+
+  # render new.html.erb
   def new
   end
 
@@ -22,19 +39,19 @@ class UsersController < ApplicationController
     if @user.errors.empty?
       self.current_user = @user
       redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!"
+      flash[:notice] = "Danke, das Sie sich angemeldet haben!"
     else
       render :action => 'new'
     end
   end
 
   def activate
-    self.current_user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
-    if logged_in? && !current_user.active?
-      current_user.activate!
-      flash[:notice] = "Signup complete!"
+    user = params[:activation_code].blank? ? false : User.find_by_activation_code(params[:activation_code])
+    if user && !user.active?
+      user.activate!
+      flash[:notice] = "Aktivierung erfolgreich!"
     end
-    redirect_back_or_default('/')
+    redirect_to(new_session_path)
   end
 
   def suspend

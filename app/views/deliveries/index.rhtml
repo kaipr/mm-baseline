@@ -1,0 +1,35 @@
+<h1 class="first">Versandte Emails</h1>
+<% if @deliveries.empty? -%>
+  <p>Keine Emails</p>
+<% else -%>
+  <ul id="deliveries" style="font-size: 1.2em;">
+    <% for delivery in @deliveries -%>
+      <li class="<%= (delivery == @delivery) ? 'selected' : '' %>">
+        <% if delivery.to -%><%= h(delivery.to.join(', ')) %><br/><% end -%>
+        <%= link_to delivery.subject, delivery_url(delivery.id) %>
+      </li>
+    <% end -%>
+  </ul>
+  <p style="margin-top: 1em;"><%= link_to 'Alle löschen', destroy_all_deliveries_path, :method => :delete %></p>
+<% end -%>
+  
+<% if @delivery -%>
+  <div id="delivery">
+    <pre style="font-size: 1.5em;">
+From: <%= h(@delivery.from) %>
+To: <%= h(@delivery.to) %>
+    </pre>
+      
+    <pre style="font-size: 1.5em;">
+<% @delivery.each_header do |name, value| -%>
+<%= name.capitalize %>: <%= value %>
+<% end -%>
+    </pre>
+      
+    <pre style="font-size: 1.5em;">
+<%= @delivery.body %>
+    </pre>
+      
+    <p style="margin-top: 1em;"><%= link_to 'Löschen', delivery_path(@delivery.id), :method => :delete %></p>
+  </div>
+<% end -%>

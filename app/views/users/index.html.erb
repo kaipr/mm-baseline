@@ -1,0 +1,25 @@
+<h1>Benutzerübersicht</h1>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <th>Benutzername</th>
+    <th>Status</th>
+    <th>Rollen</th>
+    <th>Registriert</th>
+    <th>Optionen</th>
+  </tr>
+  <% for user in @users -%>
+    <tr>
+      <td><%= h(user.login) %></td>
+      <td><%= h(user.state) %></td>
+      <td><%= h(user.roles) %></td>
+      <td><%= user.created_at.strftime('%H:%M am %d.%m.%Y') %></td>
+      <td>
+        <%= link_to 'Bearbeiten', edit_user_path(user) %>
+        <%= link_to 'Sperren', suspend_user_path(user) %>
+        <%= link_to 'Löschen', user_path(user), :method => :delete, :confirm => 'Wirklich löschen?' %>
+      </td>
+    </tr>
+  <% end -%>
+</table>
+
