@@ -1,4 +1,5 @@
 require 'digest/sha1'
+require 'rfc822'
 class User < ActiveRecord::Base
   # Authorization plugin
   acts_as_authorized_user
@@ -14,6 +15,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password,                   :if => :password_required?
   validates_length_of       :login,    :within => 3..40
   validates_length_of       :email,    :within => 3..100
+  validates_format_of       :email, :with => RFC822::EmailAddress
   validates_uniqueness_of   :login, :email, :case_sensitive => false
   before_save :encrypt_password
   

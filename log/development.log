@@ -1,1 +1,252 @@
 
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.005231)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.002459)[0m   [0mCREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.002155)[0m   [0;1mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000441)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000293)[0m   [0;1mSELECT version FROM schema_info[0m
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.000396)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.000338)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateUsers (1)
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;35;1mSQL (0.066999)[0m   [0mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "crypted_password" varchar(40) DEFAULT NULL, "salt" varchar(40) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "remember_token" varchar(255) DEFAULT NULL, "remember_token_expires_at" datetime DEFAULT NULL, "activation_code" varchar(40) DEFAULT NULL, "activated_at" datetime DEFAULT NULL, "state" varchar(255) DEFAULT 'passive', "deleted_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002083)[0m   [0;1mUPDATE schema_info SET version = 1[0m
+  [4;35;1mSQL (0.000475)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to CreateRoles (2)
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles_users: DROP TABLE roles_users[0m
+  [4;35;1mSQL (0.002761)[0m   [0mCREATE TABLE roles_users ("user_id" integer DEFAULT NULL, "role_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles: DROP TABLE roles[0m
+  [4;35;1mSQL (0.002740)[0m   [0mCREATE TABLE roles ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(40) DEFAULT NULL, "authorizable_type" varchar(40) DEFAULT NULL, "authorizable_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002100)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+  [4;35;1mSQL (0.000402)[0m   [0mSELECT * FROM schema_info[0m
+  [4;36;1mSQL (0.000543)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000098)[0m   [0mPRAGMA index_list(roles)[0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mPRAGMA index_list(roles_users)[0m
+  [4;35;1mSQL (0.000103)[0m   [0mPRAGMA index_list(users)[0m
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.000401)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000320)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000230)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000391)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000467)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mPRAGMA index_list(roles)[0m
+  [4;35;1mSQL (0.000070)[0m   [0mPRAGMA index_list(roles_users)[0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000238)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles: DROP TABLE roles[0m
+  [4;35;1mSQL (0.002523)[0m   [0mCREATE TABLE roles ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(40) DEFAULT NULL, "authorizable_type" varchar(40) DEFAULT NULL, "authorizable_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles_users: DROP TABLE roles_users[0m
+  [4;35;1mSQL (0.002230)[0m   [0mCREATE TABLE roles_users ("user_id" integer DEFAULT NULL, "role_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;35;1mSQL (0.003019)[0m   [0mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "crypted_password" varchar(40) DEFAULT NULL, "salt" varchar(40) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "remember_token" varchar(255) DEFAULT NULL, "remember_token_expires_at" datetime DEFAULT NULL, "activation_code" varchar(40) DEFAULT NULL, "activated_at" datetime DEFAULT NULL, "state" varchar(255) DEFAULT 'passive', "deleted_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002564)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.002262)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.002217)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.006424)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000425)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000288)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000372)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000581)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mPRAGMA index_list(roles)[0m
+  [4;35;1mSQL (0.000084)[0m   [0mPRAGMA index_list(roles_users)[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000229)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles: DROP TABLE roles[0m
+  [4;35;1mSQL (0.002113)[0m   [0mCREATE TABLE roles ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(40) DEFAULT NULL, "authorizable_type" varchar(40) DEFAULT NULL, "authorizable_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles_users: DROP TABLE roles_users[0m
+  [4;35;1mSQL (0.001931)[0m   [0mCREATE TABLE roles_users ("user_id" integer DEFAULT NULL, "role_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;35;1mSQL (0.002541)[0m   [0mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "crypted_password" varchar(40) DEFAULT NULL, "salt" varchar(40) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "remember_token" varchar(255) DEFAULT NULL, "remember_token_expires_at" datetime DEFAULT NULL, "activation_code" varchar(40) DEFAULT NULL, "activated_at" datetime DEFAULT NULL, "state" varchar(255) DEFAULT 'passive', "deleted_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002162)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.001900)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.002060)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.000586)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000430)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000289)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000388)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000596)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000096)[0m   [0;1mPRAGMA index_list(roles)[0m
+  [4;35;1mSQL (0.000094)[0m   [0mPRAGMA index_list(roles_users)[0m
+  [4;36;1mSQL (0.000085)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000232)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles: DROP TABLE roles[0m
+  [4;35;1mSQL (0.002199)[0m   [0mCREATE TABLE roles ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(40) DEFAULT NULL, "authorizable_type" varchar(40) DEFAULT NULL, "authorizable_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles_users: DROP TABLE roles_users[0m
+  [4;35;1mSQL (0.002087)[0m   [0mCREATE TABLE roles_users ("user_id" integer DEFAULT NULL, "role_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;35;1mSQL (0.002407)[0m   [0mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "crypted_password" varchar(40) DEFAULT NULL, "salt" varchar(40) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "remember_token" varchar(255) DEFAULT NULL, "remember_token_expires_at" datetime DEFAULT NULL, "activation_code" varchar(40) DEFAULT NULL, "activated_at" datetime DEFAULT NULL, "state" varchar(255) DEFAULT 'passive', "deleted_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002404)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.002151)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.002125)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers, reload_lang_file
+  disabled features: localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.007635)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000555)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000538)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000812)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000588)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000539)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000721)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001131)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000728)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.000472)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000448)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000294)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000397)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000600)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mPRAGMA index_list(roles)[0m
+  [4;35;1mSQL (0.000085)[0m   [0mPRAGMA index_list(roles_users)[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000286)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles: DROP TABLE roles[0m
+  [4;35;1mSQL (0.002268)[0m   [0mCREATE TABLE roles ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(40) DEFAULT NULL, "authorizable_type" varchar(40) DEFAULT NULL, "authorizable_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles_users: DROP TABLE roles_users[0m
+  [4;35;1mSQL (0.002559)[0m   [0mCREATE TABLE roles_users ("user_id" integer DEFAULT NULL, "role_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;35;1mSQL (0.002789)[0m   [0mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "crypted_password" varchar(40) DEFAULT NULL, "salt" varchar(40) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "remember_token" varchar(255) DEFAULT NULL, "remember_token_expires_at" datetime DEFAULT NULL, "activation_code" varchar(40) DEFAULT NULL, "activated_at" datetime DEFAULT NULL, "state" varchar(255) DEFAULT 'passive', "deleted_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002495)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.002363)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.002346)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.000418)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000318)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000219)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000308)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000458)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mPRAGMA index_list(roles)[0m
+  [4;35;1mSQL (0.000072)[0m   [0mPRAGMA index_list(roles_users)[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000240)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles: DROP TABLE roles[0m
+  [4;35;1mSQL (0.002443)[0m   [0mCREATE TABLE roles ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(40) DEFAULT NULL, "authorizable_type" varchar(40) DEFAULT NULL, "authorizable_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles_users: DROP TABLE roles_users[0m
+  [4;35;1mSQL (0.001940)[0m   [0mCREATE TABLE roles_users ("user_id" integer DEFAULT NULL, "role_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;35;1mSQL (0.002343)[0m   [0mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "crypted_password" varchar(40) DEFAULT NULL, "salt" varchar(40) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "remember_token" varchar(255) DEFAULT NULL, "remember_token_expires_at" datetime DEFAULT NULL, "activation_code" varchar(40) DEFAULT NULL, "activated_at" datetime DEFAULT NULL, "state" varchar(255) DEFAULT 'passive', "deleted_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.001837)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.001888)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.002032)[0m   [0;1mUPDATE schema_info SET version = 2[0m
+Initialized Simple Localization plugin:
+  languages: de
+  language file directories: /Users/jan/ruby/mm-baseline/vendor/plugins/simple_localization/lib/../languages
+  features: localized_application, localized_application_extensions, localized_models, extended_error_messages, interface_shortcut, localized_active_record_helpers, localized_array, localized_column_human_name, localized_date_and_time, localized_date_helpers, localized_error_messages, localized_form_options_helpers, localized_model_attributes, localized_models_by_lang_file, localized_number_helpers
+  disabled features: reload_lang_file, localized_templates, class_based_field_error_proc
+  [4;36;1mSQL (0.000417)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: table schema_info already exists: CREATE TABLE schema_info (version integer)[0m
+  [4;36;1mSQL (0.000438)[0m   [0;1mSELECT version FROM schema_info[0m
+  [4;35;1mSQL (0.000297)[0m   [0mSELECT version FROM schema_info[0m
+  [4;36;1mSQL (0.000397)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000607)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000095)[0m   [0;1mPRAGMA index_list(roles)[0m
+  [4;35;1mSQL (0.000084)[0m   [0mPRAGMA index_list(roles_users)[0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mPRAGMA index_list(users)[0m
+  [4;35;1mSQL (0.000296)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles: DROP TABLE roles[0m
+  [4;35;1mSQL (0.002461)[0m   [0mCREATE TABLE roles ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(40) DEFAULT NULL, "authorizable_type" varchar(40) DEFAULT NULL, "authorizable_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: roles_users: DROP TABLE roles_users[0m
+  [4;35;1mSQL (0.002626)[0m   [0mCREATE TABLE roles_users ("user_id" integer DEFAULT NULL, "role_id" integer DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: users: DROP TABLE users[0m
+  [4;35;1mSQL (0.002720)[0m   [0mCREATE TABLE users ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(255) DEFAULT NULL, "email" varchar(255) DEFAULT NULL, "crypted_password" varchar(40) DEFAULT NULL, "salt" varchar(40) DEFAULT NULL, "created_at" datetime DEFAULT NULL, "updated_at" datetime DEFAULT NULL, "remember_token" varchar(255) DEFAULT NULL, "remember_token_expires_at" datetime DEFAULT NULL, "activation_code" varchar(40) DEFAULT NULL, "activated_at" datetime DEFAULT NULL, "state" varchar(255) DEFAULT 'passive', "deleted_at" datetime DEFAULT NULL) [0m
+  [4;36;1mSQL (0.002466)[0m   [0;1mCREATE TABLE schema_info (version integer)[0m
+  [4;35;1mSQL (0.002162)[0m   [0mINSERT INTO schema_info (version) VALUES(0)[0m
+  [4;36;1mSQL (0.002186)[0m   [0;1mUPDATE schema_info SET version = 2[0m

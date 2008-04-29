@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.register! if @user.valid?
     if @user.errors.empty?
-      self.current_user = @user
+      # self.current_user = @user
       redirect_back_or_default('/')
       flash[:notice] = "Danke, das Sie sich angemeldet haben!"
     else
