@@ -1,5 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :users, :member => { :suspend => :put, :unsuspend => :put, :purge => :delete }
+  
+  map.namespace(:admin) do |admin|
+    admin.resources :users, :member => { 
+      :toggle_suspension => :put,  
+      :purge => :delete 
+    }
+  end
+  
+  map.resources :users
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate'
   map.resource :session
 

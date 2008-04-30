@@ -1,0 +1,18 @@
+<h1><%= title %></h1>
+
+<%= error_messages_for :user %>
+<% form_for :user, @user, :url => submit_url, :html => {:method => http_method} do |f| -%>
+  <p><%= f.label :password, 'Benutzername' %>
+  <%= f.text_field :login %></p>
+
+  <p><%= f.label :password, 'E-Mail' %>
+  <%= f.text_field :email %></p>
+
+  <p><%= f.label :password, 'Passwort' %>
+  <%= f.password_field :password %></p>
+
+  <p><%= f.label :password, 'Passwort bestätigen' %>
+  <%= f.password_field :password_confirmation %></p>
+
+  <p><%= submit_tag submit_tag_title %></p>
+<% end -%>

@@ -1,15 +1,5 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-def mock_user(options = {})
-  mock_model(User, {:login => 'jan', :state => 'active', :valid? => true})
-end
-
-def login_me(user) # refactor to login(user)
-  controller.stub!(:logged_in?).and_return(true)
-  controller.stub!(:current_user).and_return user
-  @request.session[:user_id] = user.id
-end
-
 describe UsersController, "routing" do
   it "should map show" do
     route_for(:controller => "users", :action => "show", :id => 'abc').should == "/users/abc"

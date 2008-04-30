@@ -1,16 +1,9 @@
 class UsersController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
-  
   # Protect these actions behind an admin login
-  permit 'admin', :only => [:suspend, :unsuspend, :destroy, :purge, :index, :edit, :update]
-  before_filter :find_user, :only => [:suspend, :unsuspend, :destroy, :purge, :edit, :update]
+  permit 'admin', :only => [:edit, :update]
+  before_filter :find_user, :only => [:edit, :update]
   
 
-  def index
-    @users = User.find :all, :order => 'state'
-  end
-  
   # render edit.html.erb
   def edit
   end
@@ -52,26 +45,6 @@ class UsersController < ApplicationController
       flash[:notice] = "Aktivierung erfolgreich!"
     end
     redirect_to(new_session_path)
-  end
-
-  def suspend
-    @user.suspend! 
-    redirect_to users_path
-  end
-
-  def unsuspend
-    @user.unsuspend! 
-    redirect_to users_path
-  end
-
-  def destroy
-    @user.delete!
-    redirect_to users_path
-  end
-
-  def purge
-    @user.destroy
-    redirect_to users_path
   end
 
 protected
