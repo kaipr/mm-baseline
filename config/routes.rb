@@ -10,6 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate'
   map.resource :session
+  
+  map.resources :deliveries, :collection => { :destroy_all => :delete } if ActionMailer::Base.delivery_method == :test
 
   # The priority is based upon order of creation: first created -> highest priority.
 
